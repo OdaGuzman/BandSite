@@ -21,11 +21,14 @@ function displayComment(comment) {
     const profile = document.createElement('div');
     profile.classList.add('comments__profile');
 
+    const likes = document.createElement('div');
+    likes.classList.add('comments__likes');
+
     const like = document.createElement('i');
     like.classList.add('fa', 'fa-heart', 'comments__icon', 'comments__heart');
 
     const num_likes = document.createElement('p');
-    num_likes.classList.add('comments__likes');
+    num_likes.classList.add('comments__numlikes');
     num_likes.innerText = comment['likes'];
 
     const del = document.createElement('i');
@@ -58,10 +61,13 @@ function displayComment(comment) {
     textWrapper.appendChild(header)
     textWrapper.appendChild(commentTag)
 
+    likes.appendChild(like)
+    likes.appendChild(num_likes)
+
     leftSide.appendChild(profile)
-    leftSide.appendChild(like)
-    leftSide.appendChild(num_likes)
+    leftSide.appendChild(likes)
     leftSide.appendChild(del)
+
     commentWrapper.appendChild(leftSide)
     commentWrapper.appendChild(textWrapper)
 

@@ -168,32 +168,6 @@
 
     @include tablet {
         padding: 0;
-
-        &__target {
-            padding: 0 6rem 1rem 6rem;
-        }
-
-        &__line {
-            padding: 0 6rem 1rem 6rem;
-            margin: 0 6rem;
-
-            @include desktop {
-                width: 520px;
-                margin: auto;
-
-                &--dynamic {
-                    margin-top: 24px;
-                }
-            }
-        }
-
-    }
-
-    @include desktop {
-        &__target {
-            width: 50%;
-            margin: auto;
-        }
     }
 
     &__title {
@@ -210,19 +184,23 @@
         }
     }
 
+
     &__wrapper {
         display: flex;
         align-items: flex-start;
         justify-content: space-evenly;
         gap: 16px;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $scMercury;
 
         @include tablet {
-            padding: 0 6rem 1.5rem 6rem;
+            margin: 0 6rem;
         }
 
         @include desktop {
             width: 50%;
             margin: auto;
+            padding: 0 6rem 1.5rem 6rem;
         }
     }
 
@@ -286,6 +264,19 @@
 
     }
 
+    &__target {
+
+        @include tablet {
+            padding: 0 6rem 1rem 6rem;
+        }
+
+        @include desktop {
+            width: 50%;
+            margin: auto;
+        }
+
+    }
+
     &__singlecomment {
         display: flex;
         align-items: flex-start;
@@ -311,8 +302,6 @@
 
     }
 
-
-
     &__profile {
         border-radius: 50%;
         background-color: $scMercury;
@@ -320,6 +309,18 @@
         width: 36px;
         flex-shrink: 0;
         margin: 12px 0;
+
+        @include tablet {
+            height: 48px;
+            width: 48px;
+        }
+    }
+
+    &__likes {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px;
     }
 
     &__icon {
@@ -337,8 +338,8 @@
         }
     }
 
-    &__id {
-        display: none;
+    &__numlikes {
+        padding: 0;
     }
 
     &__textwrapper {
@@ -367,6 +368,4 @@
     &__text {
         padding: 0;
     }
-
-
 }
