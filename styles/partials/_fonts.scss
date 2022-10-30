@@ -1,0 +1,95 @@
+@use 'mixins' as *;
+
+@font-face {
+    font-family: 'AvenirNext';
+    src: url('../assets/font/AvenirNextLTPro-Regular.otf') format('opentype'), url('../assets/font/alternativeFiles/AvenirNextLTPro.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvenirNext';
+    src: url('../assets/font/AvenirNextLTPro-Bold.otf') format('opentype'), url('../assets/font/alternativeFiles/AvenirNextLTProBold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvenirNext';
+    src: url('../assets/font/AvenirNextLTPro-Demi.otf') format('opentype'), url('../assets/font/alternativeFiles/AvenirNextLTProDemi.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+h1,
+h2 {
+    font-family: 'AvenirNext';
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    padding: 24px 0 16px 16px;
+    margin: 0;
+}
+
+h3 {
+    font-family: 'AvenirNext';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    margin: 0;
+    padding: 16px;
+}
+
+p,
+a,
+input,
+textarea,
+li {
+    font-family: 'AvenirNext';
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    padding: 0 16px;
+    margin: 0;
+}
+
+label,
+button {
+    font-family: 'AvenirNext';
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 20px;
+    // padding: 0 16px;
+    // margin: 0;
+}
+
+
+@include tablet {
+
+    h1,
+    h2 {
+        font-weight: 700;
+        @include font-size-height(60px, 68px);
+    }
+
+    h2 {
+        font-weight: 700;
+        @include font-size-height(36px, 44px);
+    }
+
+    h3 {
+        @include font-size-height(24px, 32px);
+        padding: 0 6rem 1rem 6rem;
+    }
+
+    p,
+    a {
+        @include font-size-height(14px, 20px);
+        padding: 0 6rem;
+    }
+
+    label,
+    button {
+        @include font-size-height(12px, 20px);
+    }
+}

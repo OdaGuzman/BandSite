@@ -1,0 +1,254 @@
+@use 'colors' as *;
+@use 'mixins' as *;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: $pcBandSite-Black;
+    margin: 0;
+}
+
+.button {
+    height: 40px;
+    width: 100%;
+    border-radius: 4px;
+    background-color: $pcBandSite-Black;
+    color: $pcWhite;
+    border: none;
+
+    &:hover {
+        background-color: $scBandSite-DarkBlack;
+        cursor: pointer;
+    }
+
+    @include tablet {
+        &--bio {
+            max-width: 150px;
+            padding: 0 32px;
+            align-self: flex-end;
+        }
+    }
+}
+
+hr {
+    border: none;
+    border-top: 1px solid $scMercury;
+    margin-top: 16px;
+}
+
+.bottom-border {
+    border-bottom: 3px solid $pcWhite;
+}
+
+
+//HEADER
+.header {
+    color: $scMercury;
+    background-color: $pcBandSite-Black;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include tablet {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    @include desktop {
+        padding-left: 5rem;
+    }
+
+    &__logo {
+        padding-top: 16px;
+
+        &--link {
+            padding: 0;
+        }
+
+        @include tablet {
+            padding-top: 0;
+            padding-left: 40px;
+        }
+    }
+
+    &__nav {
+        width: 100%;
+
+        @include tablet {
+            width: auto;
+        }
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+
+        @include tablet {
+            width: auto;
+            gap: 5rem;
+        }
+    }
+
+    &__item {
+        list-style: none;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        padding: 8px;
+
+        &:hover,
+        &:active,
+        &--active {
+            font-weight: 400;
+            color: $pcWhite;
+            @extend .bottom-border;
+        }
+
+        &:active,
+        &--active {
+            font-weight: 600;
+        }
+
+        @include tablet {
+            padding: 24px 0;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $scMercury;
+        width: 100%;
+        text-align: center;
+        height: 100%;
+        padding: 0;
+    }
+}
+
+
+
+.footer {
+    color: $pcWhite;
+    background-color: $pcBandSite-Black;
+
+    @include tablet {
+        position: relative;
+
+        &__socials {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 48px 0 36px 40px;
+
+            @include desktop {
+                padding: 48px 0 36px 8rem;
+            }
+        }
+
+        &__text {
+            font-weight: 600;
+            padding: 0;
+        }
+
+        &__contact {
+            padding: 0 40px;
+
+            @include desktop {
+                padding: 0 4rem 0 0;
+            }
+        }
+
+        &__title {
+            @include font-size-height(14px, 20px);
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+    }
+
+
+    &__icons {
+        display: flex;
+        justify-content: flex-start;
+        gap: 32px;
+        padding: 0 16px;
+
+        @include desktop {
+            padding-left: 3rem;
+        }
+    }
+
+    &__link {
+        padding: 0;
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+
+        @include desktop {
+            padding: 0 8rem;
+        }
+    }
+
+    &__description {
+        padding-bottom: 16px;
+
+        @include tablet {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    &__email {
+        text-decoration: none;
+        color: $pcWhite;
+
+        @include tablet {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    &__logo {
+        margin: 64px 16px 16px 16px;
+
+        @include tablet {
+            position: absolute;
+            margin: 0;
+            right: 40px;
+            top: 60px;
+        }
+
+        @include desktop {
+            right: 8rem;
+            top: 3.5rem;
+        }
+    }
+
+    &__copyright {
+        font-size: 11px;
+
+        @include tablet {
+            padding: 36px 40px 24px 40px;
+        }
+
+        @include desktop {
+            padding: 36px 8rem 24px 8rem;
+        }
+    }
+}

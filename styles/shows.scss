@@ -1,0 +1,244 @@
+@use './partials/colors' as *;
+@use './partials/global' as *;
+@use './partials/fonts' as *;
+@use './partials/mixins' as *;
+
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/Images/hero-shows.jpg');
+    height: 20rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+
+    @include tablet {
+        padding: 60px 40px;
+        height: 40rem;
+    }
+
+    @include desktop {
+        height: 55rem;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 8rem;
+    }
+
+    &__titles {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 16px;
+        // padding: 0 0 0 8rem;
+    }
+
+    &__text {
+        text-align: left;
+        margin: 0;
+        padding: 0 16px;
+        color: $pcWhite;
+        font-weight: 600;
+        font-size: 2rem;
+        line-height: 32px;
+
+        @include tablet {
+            padding: 0;
+            font-size: 3.5rem;
+            line-height: 70px;
+            max-width: 60%;
+        }
+
+        @include desktop {
+            max-width: 80%;
+        }
+    }
+
+    &__album {
+        color: $pcWhite;
+        font-weight: 500;
+        font-size: 1rem;
+
+        @include tablet {
+            padding: 0;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+    }
+
+    &__soundcloud {
+        height: 100px;
+        width: 100%;
+        padding: 0 16px;
+
+        @include tablet {
+            padding: 0;
+            max-width: 60%;
+            height: 150px;
+        }
+
+        @include desktop {
+            max-width: 25rem;
+        }
+    }
+}
+
+.shows {
+
+    padding: 0 16px;
+
+    @include tablet {
+
+        padding: 0 40px;
+
+        &__hidden {
+            // display: none;
+            width: 180px;
+        }
+    }
+
+    @include desktop {
+        padding: 0 8rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 10rem;
+    }
+
+    &__title {
+        font-weight: 600;
+        padding: 48px 0 16px 0;
+
+        @include tablet {
+            padding: 48px 0 36px 0;
+        }
+    }
+
+    &__container {
+        // padding: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        // gap: 16px;
+
+        @include tablet {
+            gap: 0;
+        }
+
+        @include desktop {
+            padding: 4rem 0;
+            flex-grow: 2;
+        }
+    }
+
+    &__headings {
+        display: none;
+
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            list-style: none;
+            padding: 0;
+        }
+    }
+
+    &__data {
+
+        list-style: none;
+        padding: 0 0 16px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 8px;
+        border-bottom: 1px solid $scMercury;
+        margin-bottom: 16px;
+
+        @include tablet {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 16px 0;
+
+            margin: 0;
+            border-bottom: 1px solid $scMercury;
+            ;
+
+            p {
+                min-width: 120px;
+            }
+
+            &:hover {
+                background-color: $scAlabaster;
+            }
+
+            &--selected {
+                background-color: $scMercury;
+            }
+        }
+    }
+
+    &__list {
+        padding: 0;
+    }
+
+
+    &__subtitle {
+        font-family: 'AvenirNext';
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 20px;
+        color: $pcSilver;
+        padding: 0;
+        text-align: left;
+
+        &--heading {
+            display: none;
+
+            @include tablet {
+                display: block;
+                color: $pcSilver;
+                font-weight: 600;
+                font-size: 13px;
+                line-height: 20px;
+                padding: 0;
+                text-align: left;
+                min-width: 120px;
+            }
+        }
+
+        @include tablet {
+            min-width: 120px;
+            display: none;
+        }
+    }
+
+    &__date {
+        font-weight: 600;
+        padding: 0;
+        min-width: 120px;
+    }
+
+    &__info {
+        padding: 0;
+        min-width: 120px;
+    }
+
+    &__line {
+        margin: 0 0 16px -15px;
+        width: 105%;
+    }
+
+    &__button {
+        margin-top: 5px;
+        width: 100%;
+        font-size: 14px;
+
+        @include tablet {
+            max-width: 180px;
+        }
+    }
+}

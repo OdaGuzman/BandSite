@@ -1,0 +1,372 @@
+@use './partials/colors' as *;
+@use './partials/global' as *;
+@use './partials/fonts' as *;
+@use './partials/mixins' as *;
+
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/Images/hero-bio.jpg');
+    height: 20rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+
+    @include tablet {
+        height: 30rem;
+    }
+
+    @include desktop {
+        height: 40rem;
+    }
+
+    &__text {
+        margin: 0;
+        padding: 0 16px;
+        color: $pcWhite;
+        font-weight: 600;
+
+        @include tablet {
+            padding: 0 40px;
+        }
+
+        @include desktop {
+            padding: 0 8rem;
+        }
+    }
+}
+
+
+.about {
+    padding-bottom: 16px;
+
+    @include tablet {
+        padding-bottom: 36px;
+
+        &__quote {
+            padding-bottom: 3rem;
+
+            @include desktop {
+                padding: 0 12rem 3rem 12rem;
+                width: 85%;
+            }
+        }
+
+        &__signature {
+            font-size: 16px;
+        }
+
+        &__paragraphs {
+            display: flex;
+            justify-content: flex-start;
+            gap: 2rem;
+            padding: 0 6rem;
+
+            @include desktop {
+                padding: 0 12rem;
+            }
+        }
+
+        &__text {
+            padding: 0;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        padding: 0 16px;
+
+        @include tablet {
+            padding: 0 6rem 2rem 6rem;
+        }
+
+        @include desktop {
+            padding: 0 12rem 2rem 12rem;
+        }
+    }
+
+    &__title {
+
+        @include tablet {
+            font-weight: 600;
+            padding: 48px 0 36px 40px;
+        }
+
+        @include desktop {
+            padding: 48px 0 36px 8rem;
+        }
+
+        &--body {
+            font-weight: 600;
+
+            @include desktop {
+                padding: 0 12rem 2rem 12rem;
+            }
+        }
+    }
+
+}
+
+.gallery {
+
+    background-color: $scAlabaster;
+
+    @include tablet {
+        &__title {
+            font-weight: 600;
+            padding: 48px 0 36px 40px;
+
+            @include desktop {
+                padding: 48px 0 36px 8rem;
+            }
+        }
+    }
+
+    &__images {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        @include tablet {
+            flex-direction: row;
+            padding: 0 40px 36px 40px;
+            gap: 1rem;
+        }
+
+        @include desktop {
+            flex-direction: row;
+            padding: 0 8rem 36px 8rem;
+            gap: 16px;
+        }
+    }
+
+    &__item {
+        filter: grayscale(100%);
+        width: 100%;
+        padding: 0 16px 16px 16px;
+
+        &:hover {
+            filter: none;
+        }
+
+        @include tablet {
+            width: calc(33% - 12px);
+            padding: 0;
+        }
+
+        @include desktop {
+            width: calc(33% - 8px);
+            padding: 0;
+        }
+    }
+}
+
+.comments {
+
+    padding: 0 16px 16px 16px;
+
+    @include tablet {
+        padding: 0;
+
+        &__target {
+            padding: 0 6rem 1rem 6rem;
+        }
+
+        &__line {
+            padding: 0 6rem 1rem 6rem;
+            margin: 0 6rem;
+
+            @include desktop {
+                width: 520px;
+                margin: auto;
+
+                &--dynamic {
+                    margin-top: 24px;
+                }
+            }
+        }
+
+    }
+
+    @include desktop {
+        &__target {
+            width: 50%;
+            margin: auto;
+        }
+    }
+
+    &__title {
+        letter-spacing: 1px;
+        padding-left: 0;
+
+        @include tablet {
+            font-weight: 600;
+            padding: 48px 0 36px 40px;
+        }
+
+        @include desktop {
+            padding: 48px 0 36px 8rem;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        gap: 16px;
+
+        @include tablet {
+            padding: 0 6rem 1.5rem 6rem;
+        }
+
+        @include desktop {
+            width: 50%;
+            margin: auto;
+        }
+    }
+
+    &__avatar {
+        border-radius: 50%;
+        background-image: url('../assets/Images/Mohan-muruge.jpg');
+        width: 36px;
+        height: 36px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: 20px;
+
+        @include tablet {
+            width: 48px;
+            height: 48px;
+
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        flex-grow: 2;
+        padding-top: 0;
+    }
+
+    &__subtitle {
+        font-variant: small-caps;
+        color: $pcSilver;
+        padding: 0;
+    }
+
+    &__input {
+        min-height: 36px;
+        width: 100%;
+        border-radius: 4px;
+        padding: 12px;
+        border: 1px solid $scMercury;
+        margin-bottom: 16px;
+
+        &--alert {
+            border-color: $errorState;
+        }
+
+        &:active {
+            border-color: $pcBandSite-Black;
+        }
+
+        @include tablet {
+            min-height: 48px;
+            padding: 16px;
+        }
+
+        &--bigger {
+            height: 5rem;
+            color: $pcBandSite-Black;
+            resize: none;
+        }
+
+
+    }
+
+    &__singlecomment {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        gap: 16px;
+        border-bottom: 1px solid $scMercury;
+        padding-bottom: 16px;
+
+        @include tablet {
+            padding-bottom: 32px;
+        }
+    }
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+
+        @include tablet {
+            gap: 8px;
+        }
+
+    }
+
+
+
+    &__profile {
+        border-radius: 50%;
+        background-color: $scMercury;
+        height: 36px;
+        width: 36px;
+        flex-shrink: 0;
+        margin: 12px 0;
+    }
+
+    &__icon {
+        color: $pcSilver;
+    }
+
+    &__heart {
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &--selected {
+            color: maroon;
+        }
+    }
+
+    &__id {
+        display: none;
+    }
+
+    &__textwrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        flex-grow: 2;
+    }
+
+    &__header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__name {
+        font-weight: 600;
+        padding: 16px 0;
+    }
+
+    &__date {
+        color: $pcSilver;
+        padding: 16px 0;
+    }
+
+    &__text {
+        padding: 0;
+    }
+
+
+}
